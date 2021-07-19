@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\CloneQLNT\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly.csproj": {}
+    "D:\\ManageMotel_C#\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly.csproj": {}
   },
   "projects": {
-    "D:\\CloneQLNT\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly.csproj": {
+    "D:\\ManageMotel_C#\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CloneQLNT\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly.csproj",
+        "projectUniqueName": "D:\\ManageMotel_C#\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly.csproj",
         "projectName": "API_ManageMotel_Fpoly",
-        "projectPath": "D:\\CloneQLNT\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly.csproj",
+        "projectPath": "D:\\ManageMotel_C#\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\CloneQLNT\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly\\obj\\",
+        "outputPath": "D:\\ManageMotel_C#\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -46,7 +46,21 @@
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[5.0.2, )"
+              "version": "[3.1.15, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.15, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.15, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.5, )"
             }
           },
           "imports": [

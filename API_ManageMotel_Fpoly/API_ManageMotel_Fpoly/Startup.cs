@@ -51,6 +51,8 @@ namespace API_ManageMotel_Fpoly
             #region Add Transient
             //services.AddTransient<IOrderService, OrderService>();
             #endregion
+
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

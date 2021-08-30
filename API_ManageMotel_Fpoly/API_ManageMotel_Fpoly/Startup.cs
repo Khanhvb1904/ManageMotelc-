@@ -6,10 +6,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-//using SmartWarehouseWeb.EFModel;
-//using SmartWarehouseWeb.IServices;
-//using SmartWarehouseWeb.Services;
-//using SmartWarehouseWeb.SWareDBContext;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -65,25 +61,20 @@ namespace API_ManageMotel_Fpoly
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
+                app.UseExceptionHandler("/Error");
             }
-            app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
 
             app.UseAuthorization();
 
-            app.UseAuthentication();
-
             app.UseEndpoints(endpoints =>
             {
-                //endpoints.MapRazorPages();
+                endpoints.MapRazorPages();
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    name: "API",
+                    pattern: "API/{controller=DashBoard}/{action=Index}/{id?}").RequireCors("Mypolicy");
             });
         }
     }

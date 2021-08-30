@@ -32,8 +32,17 @@ namespace API_ManageMotel_Fpoly
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddControllersWithViews();
-            services.AddControllersWithViews();
+
+            #region Cros API
+            services.AddCors(options =>
+            {
+                //options.AddDefaultPolicy(
+
+                //     builder => builder.WithOrigins("Link view"));
+                //options.AddPolicy("Mypolicy", builder => builder.WithOrigins("Link api"));
+            }
+            );
+            #endregion
 
             #region Add Database
             //services.AddDbContext<SWareDB>(x => x.UseSqlServer(Configuration.GetConnectionString("SWareDB")));
@@ -47,6 +56,7 @@ namespace API_ManageMotel_Fpoly
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ManageMotel_C#\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly.csproj": {}
+    "C:\\Users\\Admin\\Desktop\\ManageMotel_C#\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly.csproj": {}
   },
   "projects": {
-    "D:\\ManageMotel_C#\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly.csproj": {
+    "C:\\Users\\Admin\\Desktop\\ManageMotel_C#\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ManageMotel_C#\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\ManageMotel_C#\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly.csproj",
         "projectName": "API_ManageMotel_Fpoly",
-        "projectPath": "D:\\ManageMotel_C#\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly.csproj",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\ManageMotel_C#\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\ManageMotel_C#\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\ManageMotel_C#\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

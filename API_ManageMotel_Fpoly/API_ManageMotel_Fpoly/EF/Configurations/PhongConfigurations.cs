@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace API_ManageMotel_Fpoly.EF.Configurations
 {
-    public class Class
+    public class PhongConfigurations
     {
     }
 }

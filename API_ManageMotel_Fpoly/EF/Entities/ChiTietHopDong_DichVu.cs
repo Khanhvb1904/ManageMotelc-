@@ -9,7 +9,7 @@ namespace API_ManageMotel_Fpoly.EF.Entities
     {
         public int maHopDong { get; set; }
         public int maPhong { get; set; }
-        public int maDichVu { get; set; }
+        public int maDichVu { get; set; } 
         public int soLuong { get; set; }
         public decimal donGia { get; set; }
 

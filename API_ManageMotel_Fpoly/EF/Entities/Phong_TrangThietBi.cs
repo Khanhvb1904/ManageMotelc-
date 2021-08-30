@@ -11,7 +11,7 @@ namespace API_ManageMotel_Fpoly.EF.Entities
         public int maTrangThietBi { get; set; }
         public int soLuong { get; set; }
         public bool trangThai { get; set; }
-        public Phong Phong { get; set; }
+        public Phong Phong { get; set; } 
         public TrangThietBi TrangThietBi { get; set; }
     }
 }

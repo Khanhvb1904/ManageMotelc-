@@ -9,7 +9,7 @@ namespace API_ManageMotel_Fpoly.EF.Entities
     {
         public int Id { get; set; }
         public string name { get; set; }
-        public string cmnd { get; set; }
+        public string cmnd { get; set; } 
         public string ngayCap { get; set; }
         public string noiCap { get; set; }
         public string HKTT { get; set; }

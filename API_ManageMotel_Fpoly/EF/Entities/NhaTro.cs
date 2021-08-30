@@ -7,7 +7,7 @@ namespace API_ManageMotel_Fpoly.EF.Entities
 {
     public class NhaTro
     {
-        public int Id { get; set; }
+        public int Id { get; set; } 
         public string name { get; set; }
         public string diaChi { get; set; }
         public string SDT { get; set; }

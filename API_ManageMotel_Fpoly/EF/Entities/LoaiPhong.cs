@@ -9,7 +9,7 @@ namespace API_ManageMotel_Fpoly.EF.Entities
     {
         public int Id { get; set; }
         public string tenGoi { get; set; }
-        public int sucChua { get; set; }
+        public int sucChua { get; set; } 
         public bool trangThai { get; set; }
         public List<Phong> Phong { get; set; }
     }

@@ -147,7 +147,6 @@ D:\ManageMotel_C#\API_ManageMotel_Fpoly\API_ManageMotel_Fpoly\bin\Debug\netcorea
 D:\ManageMotel_C#\API_ManageMotel_Fpoly\API_ManageMotel_Fpoly\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\ManageMotel_C#\API_ManageMotel_Fpoly\API_ManageMotel_Fpoly\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\ManageMotel_C#\API_ManageMotel_Fpoly\API_ManageMotel_Fpoly\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-D:\MotelManagement\API_ManageMotel_Fpoly\API_ManageMotel_Fpoly\obj\Debug\netcoreapp3.1\API_ManageMotel_Fpoly.csproj.AssemblyReference.cache
 D:\MotelManagement\API_ManageMotel_Fpoly\API_ManageMotel_Fpoly\obj\Debug\netcoreapp3.1\API_ManageMotel_Fpoly.GeneratedMSBuildEditorConfig.editorconfig
 D:\MotelManagement\API_ManageMotel_Fpoly\API_ManageMotel_Fpoly\obj\Debug\netcoreapp3.1\API_ManageMotel_Fpoly.AssemblyInfoInputs.cache
 D:\MotelManagement\API_ManageMotel_Fpoly\API_ManageMotel_Fpoly\obj\Debug\netcoreapp3.1\API_ManageMotel_Fpoly.AssemblyInfo.cs

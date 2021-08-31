@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\API_ManageMotel_Fpoly",
+    "\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly",
+    "\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly\\EF",
+    "\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly\\EF\\Configurations",
+    "\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly\\EF\\Entities",
+    "\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly\\EF\\ManageMotelDbContext",
+    "\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly\\Migrations"
+  ],
+  "SelectedNode": "\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly\\Migrations\\20210831143425_createdb_v1.cs",
+  "PreviewInSolutionExplorer": false
+}

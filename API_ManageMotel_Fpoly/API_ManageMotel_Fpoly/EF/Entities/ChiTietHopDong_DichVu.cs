@@ -19,4 +19,4 @@ namespace API_ManageMotel_Fpoly.EF.Entities
 
     }
 }
-}
+

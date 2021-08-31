@@ -14,6 +14,7 @@ namespace API_ManageMotel_Fpoly.EF.Entities
         public decimal giaPhong { get; set; }
         public string moTa { get; set; }
         public bool trangThai { get; set; }
+        public NhaTro NhaTro { get; set; }
         public LoaiPhong LoaiPhong { get; set; }
         public List<Phong_TrangThietBi> Phong_TrangThietBi { get; set; }
         public List<ChiTietHopDong_DichVu> ChiTietHopDong_DichVu { get; set; }

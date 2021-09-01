@@ -18,5 +18,6 @@ namespace API_ManageMotel_Fpoly.EF.Entities
         public string email { get; set; }
         public bool trangThai { get; set; }
         public List<HopDong> HopDong { get; set; }
+        public List<Xe> Xe { get; set; }
     }
 }

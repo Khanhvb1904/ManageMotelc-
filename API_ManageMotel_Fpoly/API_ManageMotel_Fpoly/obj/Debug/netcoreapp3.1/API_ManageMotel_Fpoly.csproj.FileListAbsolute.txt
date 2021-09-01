@@ -296,3 +296,4 @@ D:\MotelManagement\API_ManageMotel_Fpoly\API_ManageMotel_Fpoly\obj\Debug\netcore
 D:\MotelManagement\API_ManageMotel_Fpoly\API_ManageMotel_Fpoly\obj\Debug\netcoreapp3.1\API_ManageMotel_Fpoly.Views.pdb
 D:\MotelManagement\API_ManageMotel_Fpoly\API_ManageMotel_Fpoly\obj\Debug\netcoreapp3.1\API_ManageMotel_Fpoly.csproj.CopyComplete
 D:\MotelManagement\API_ManageMotel_Fpoly\API_ManageMotel_Fpoly\obj\Debug\netcoreapp3.1\API_ManageMotel_Fpoly.genruntimeconfig.cache
+D:\MotelManagement\API_ManageMotel_Fpoly\API_ManageMotel_Fpoly\obj\Debug\netcoreapp3.1\API_ManageMotel_Fpoly.csproj.AssemblyReference.cache

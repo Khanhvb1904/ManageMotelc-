@@ -4,14 +4,16 @@ using API_ManageMotel_Fpoly.EF.ManageMotelDbContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace API_ManageMotel_Fpoly.Migrations
 {
     [DbContext(typeof(ManageMotelDbContext))]
-    partial class ManageMotelDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210901153510_update_database_V2")]
+    partial class update_database_V2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

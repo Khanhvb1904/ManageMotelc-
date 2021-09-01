@@ -11,5 +11,6 @@ namespace API_ManageMotel_Fpoly.EF.Entities
         public string name { get; set; }
         public string diaChi { get; set; }
         public string SDT { get; set; }
+        public List<Phong> Phong { get; set; }
     }
 }

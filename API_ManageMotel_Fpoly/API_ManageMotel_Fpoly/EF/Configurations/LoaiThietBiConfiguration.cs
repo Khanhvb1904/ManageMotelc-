@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace API_ManageMotel_Fpoly.EF.Configurations
 {
-    public class NhaTroConfigurations : IEntityTypeConfiguration<NhaTro>
+    public class LoaiThietBiConfiguration : IEntityTypeConfiguration<LoaiThietBi>
     {
-        public void Configure(EntityTypeBuilder<NhaTro> builder)
+        public void Configure(EntityTypeBuilder<LoaiThietBi> builder)
         {
-            builder.ToTable("NhaTro");
+            builder.ToTable("LoaiThietBi");
             builder.HasKey(c => c.Id);
             builder.Property(c => c.Id).UseIdentityColumn(1, 1);
         }

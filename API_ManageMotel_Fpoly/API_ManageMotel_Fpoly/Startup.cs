@@ -1,3 +1,4 @@
+using API_ManageMotel_Fpoly.EF.ManageMotelDbContext;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -41,7 +42,7 @@ namespace API_ManageMotel_Fpoly
             #endregion
 
             #region Add Database
-            //services.AddDbContext<SWareDB>(x => x.UseSqlServer(Configuration.GetConnectionString("SWareDB")));
+            services.AddDbContext<ManageMotelDbContext>(x => x.UseSqlServer(Configuration.GetConnectionString("ManageMotelConnectionString")));
             #endregion
 
             #region Add Transient

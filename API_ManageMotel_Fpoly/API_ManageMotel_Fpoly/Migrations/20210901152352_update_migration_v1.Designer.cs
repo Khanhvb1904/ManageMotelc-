@@ -4,14 +4,16 @@ using API_ManageMotel_Fpoly.EF.ManageMotelDbContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace API_ManageMotel_Fpoly.Migrations
 {
     [DbContext(typeof(ManageMotelDbContext))]
-    partial class ManageMotelDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210901152352_update_migration_v1")]
+    partial class update_migration_v1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -303,13 +305,7 @@ namespace API_ManageMotel_Fpoly.Migrations
                     b.Property<string>("moTa")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("ngayPhongSeTrong")
-                        .HasColumnType("datetime2");
-
                     b.Property<int>("soPhong")
-                        .HasColumnType("int");
-
-                    b.Property<int>("sucChua")
                         .HasColumnType("int");
 
                     b.Property<bool>("trangThai")

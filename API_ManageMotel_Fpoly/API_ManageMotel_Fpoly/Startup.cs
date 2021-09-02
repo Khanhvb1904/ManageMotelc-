@@ -1,4 +1,6 @@
 using API_ManageMotel_Fpoly.EF.ManageMotelDbContext;
+using API_ManageMotel_Fpoly.IServices;
+using API_ManageMotel_Fpoly.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -46,7 +48,7 @@ namespace API_ManageMotel_Fpoly
             #endregion
 
             #region Add Transient
-            //services.AddTransient<IOrderService, OrderService>();
+            services.AddTransient<IThongTinNhaTroServices, ThongTinNhaTroServices>();
             #endregion
 
             services.AddRazorPages();
@@ -72,11 +74,10 @@ namespace API_ManageMotel_Fpoly
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();
-                endpoints.MapControllerRoute(
-                    name: "API",
-                    pattern: "API/{controller=DashBoard}/{action=Index}/{id?}").RequireCors("Mypolicy");
+                endpoints.MapControllers();
             });
         }
+
+
     }
 }

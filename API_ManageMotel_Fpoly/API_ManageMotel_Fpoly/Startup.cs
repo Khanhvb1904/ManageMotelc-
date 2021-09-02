@@ -41,7 +41,10 @@ namespace API_ManageMotel_Fpoly
                 //options.AddPolicy("Mypolicy", builder => builder.WithOrigins("Link api"));
             }
             );
+            services.AddHttpContextAccessor();
+            services.AddRazorPages();
             #endregion
+
 
             #region Add Database
             services.AddDbContext<ManageMotelDbContext>(x => x.UseSqlServer(Configuration.GetConnectionString("ManageMotelConnectionString")));
@@ -49,9 +52,11 @@ namespace API_ManageMotel_Fpoly
 
             #region Add Transient
             services.AddTransient<IThongTinNhaTroServices, ThongTinNhaTroServices>();
+            services.AddTransient<IPhongService, PhongService>();
             #endregion
 
-            services.AddRazorPages();
+
+   
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

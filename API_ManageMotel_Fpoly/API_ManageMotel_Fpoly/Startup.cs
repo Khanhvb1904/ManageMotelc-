@@ -1,4 +1,6 @@
 using API_ManageMotel_Fpoly.EF.ManageMotelDbContext;
+using API_ManageMotel_Fpoly.IServices;
+using API_ManageMotel_Fpoly.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -39,17 +41,21 @@ namespace API_ManageMotel_Fpoly
                 //options.AddPolicy("Mypolicy", builder => builder.WithOrigins("Link api"));
             }
             );
+            services.AddHttpContextAccessor();
+            services.AddRazorPages();
             #endregion
+
 
             #region Add Database
             services.AddDbContext<ManageMotelDbContext>(x => x.UseSqlServer(Configuration.GetConnectionString("ManageMotelConnectionString")));
             #endregion
 
             #region Add Transient
-            //services.AddTransient<IOrderService, OrderService>();
+            services.AddTransient<IPhongService, PhongService>();
             #endregion
 
-            services.AddRazorPages();
+
+   
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -72,10 +78,7 @@ namespace API_ManageMotel_Fpoly
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();
-                endpoints.MapControllerRoute(
-                    name: "API",
-                    pattern: "API/{controller=DashBoard}/{action=Index}/{id?}").RequireCors("Mypolicy");
+                endpoints.MapControllers();
             });
         }
     }

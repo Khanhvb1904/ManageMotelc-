@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API_ManageMotel_Fpoly.Migrations
 {
     [DbContext(typeof(ManageMotelDbContext))]
-    [Migration("20210901152352_update_migration_v1")]
-    partial class update_migration_v1
+    [Migration("20210903152215_Khanhvb")]
+    partial class Khanhvb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -238,7 +238,7 @@ namespace API_ManageMotel_Fpoly.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("ten")
+                    b.Property<string>("tenloaixe")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -305,7 +305,13 @@ namespace API_ManageMotel_Fpoly.Migrations
                     b.Property<string>("moTa")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("ngayPhongSeTrong")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("soPhong")
+                        .HasColumnType("int");
+
+                    b.Property<int>("sucChua")
                         .HasColumnType("int");
 
                     b.Property<bool>("trangThai")
@@ -420,7 +426,7 @@ namespace API_ManageMotel_Fpoly.Migrations
                     b.Property<int>("maLoaiXe")
                         .HasColumnType("int");
 
-                    b.Property<string>("ten")
+                    b.Property<string>("tenxe")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

@@ -47,6 +47,9 @@ namespace API_ManageMotel_Fpoly.EF.ManageMotelDbContext
         public DbSet<Phong_TrangThietBi> Phong_TrangThietBi { get; set; }
         public DbSet<TaiKhoan> TaiKhoan { get; set; }
         public DbSet<TrangThietBi> TrangThietBi { get; set; }
+        public DbSet<Xe> Xe { get; set; }
+        public DbSet<LoaiXe> LoaiXe { get; set; }
+
 
         #endregion
     }

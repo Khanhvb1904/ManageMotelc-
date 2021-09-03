@@ -51,6 +51,7 @@ namespace API_ManageMotel_Fpoly
             #endregion
 
             #region Add Transient
+            services.AddTransient<IThongTinNhaTroServices, ThongTinNhaTroServices>();
             services.AddTransient<IPhongService, PhongService>();
             #endregion
 
@@ -81,5 +82,7 @@ namespace API_ManageMotel_Fpoly
                 endpoints.MapControllers();
             });
         }
+
+
     }
 }

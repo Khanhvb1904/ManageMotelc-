@@ -35,11 +35,7 @@ namespace API_ManageMotel_Fpoly.Services
             return Task.FromResult(_LstNhatro);
         }
 
-        public NhaTro laynhatro(int id)
-        {
-            var nhatro = _context.NhaTro.Where(c => c.Id == id).FirstOrDefault();
-            return nhatro;
-        }
+        
 
         public async Task<int> SuaThongTinnhatro(NhaTro nhaTro)
         {
@@ -78,6 +74,12 @@ namespace API_ManageMotel_Fpoly.Services
                 return 1;
             }
             return 0;
+        }
+
+        public NhaTro laynhatro(int id)
+        {
+            var nhatro = _context.NhaTro.Where(c => c.Id == id).FirstOrDefault();
+            return nhatro;
         }
 
         public async Task<int> Xoanhatro(NhaTro nhaTro)

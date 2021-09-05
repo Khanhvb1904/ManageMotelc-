@@ -17,8 +17,8 @@ namespace API_ManageMotel_Fpoly.Services
         {
             _context = context;
         }
-
-        public async Task<List<FullinfoCustomer>> LayDanhSachKhachHang()
+        #region Lấy Danh Sách và Thông Tin Khách Hàng
+        public async Task<List<FullinfoCustomer>> LayDanhSachFullKhachHang()    
         {
             var laythongtinkhachhang = (from a in _context.KhachHang
                                         join b in _context.Xe on a.Id equals b.maKhachHang
@@ -62,17 +62,51 @@ namespace API_ManageMotel_Fpoly.Services
             return await Task.FromResult(laythongtinkhachhang);
         }
 
-        public FullinfoCustomer laykhachhang(int id)
+        public Task<List<KhachHang>> LayDanhSachKhachHang()
         {
-            throw new NotImplementedException();
+            List<KhachHang> _Lstkhachhang = new List<KhachHang>();
+            var lstkhach = _context.KhachHang.ToList();
+            if (lstkhach.Count>=0)
+            {
+                foreach (var item in lstkhach)
+                {
+                    _Lstkhachhang.Add(item);
+                }
+            }
+            return Task.FromResult(_Lstkhachhang);
         }
 
-        public Task<int> SuaThongTinKhachHang(FullinfoCustomer khach)
+        public Task<List<Xe>> LayDanhSachXeKhachHang()
         {
-            throw new NotImplementedException();
+            List<Xe> _Lstxe = new List<Xe>();
+            var lstxe = _context.Xe.ToList();
+            if (lstxe.Count >= 0)
+            {
+                foreach (var item in lstxe)
+                {
+                    _Lstxe.Add(item);
+                }
+            }
+            return Task.FromResult(_Lstxe);
         }
 
-        public async Task<int> ThemThongTinKhachHang(KhachHang khach, Xe xe, LoaiXe loaiXe)
+        public Task<List<LoaiXe>> LayDanhSachLoaiKhachHang()
+        {
+            List<LoaiXe> _Lstloaixe = new List<LoaiXe>();
+            var lstloaixe = _context.LoaiXe.ToList();
+            if (lstloaixe.Count >= 0)
+            {
+                foreach (var item in lstloaixe)
+                {
+                    _Lstloaixe.Add(item);
+                }
+            }
+            return Task.FromResult(_Lstloaixe);
+        }
+        #endregion
+
+        #region Thêm Thông Tin Khách Hàng
+        public async Task<int> ThemThongTinKhachHang(KhachHang khach)
         {
             var themthongtinkhachhang = new KhachHang()
             {
@@ -86,29 +120,150 @@ namespace API_ManageMotel_Fpoly.Services
                 SDT = khach.SDT,
                 trangThai = khach.trangThai
             };
-            var themthongtinxekhachhang = new Xe()
-            {
-                tenxe = xe.tenxe,
-                bienSo = xe.bienSo
-            };
-            var themthongtinloaixekhachhang = new LoaiXe()
-            {
-                tenloaixe = loaiXe.tenloaixe
-            };
-            if (themthongtinkhachhang != null && themthongtinxekhachhang != null && themthongtinloaixekhachhang != null)
+            if (themthongtinkhachhang != null)
             {
                 _context.KhachHang.Add(themthongtinkhachhang);
-                _context.Xe.Add(themthongtinxekhachhang);
-                _context.LoaiXe.Add(themthongtinloaixekhachhang);
                 await _context.SaveChangesAsync();
                 return 1;
             }
             return 0;
         }
 
-        public Task<int> XoaThongTinKhachHang(FullinfoCustomer khach)
+        public async Task<int> ThemThongTinLoaiXeKhachHang(LoaiXe loaiXe)
         {
-            throw new NotImplementedException();
+            var themthongtinLoaiXekhachhang = new LoaiXe()
+            {
+                tenloaixe = loaiXe.tenloaixe
+            };
+            if (themthongtinLoaiXekhachhang != null)
+            {
+                _context.LoaiXe.Add(themthongtinLoaiXekhachhang);
+                await _context.SaveChangesAsync();
+                return 1;
+            }
+            return 0;
         }
+
+        public async Task<int> ThemThongTinXeKhachHang(Xe xe)
+        {
+            var themthongtinXekhachhang = new Xe()
+            {
+                tenxe = xe.tenxe,
+                bienSo = xe.bienSo
+            };
+            if (themthongtinXekhachhang != null)
+            {
+                _context.Xe.Add(themthongtinXekhachhang);
+                await _context.SaveChangesAsync();
+                return 1;
+            }
+            return 0;
+        }
+        #endregion
+
+        #region Sửa Thông Tin Khách Hàng
+        public async Task<int> SuaThongTinKhachHang(KhachHang khach)
+        {
+            var SuaThongTinKhach = _context.KhachHang.Where(c => c.Id == khach.Id).FirstOrDefault();
+            if (SuaThongTinKhach != null)
+            {
+                SuaThongTinKhach.name = khach.name;
+                SuaThongTinKhach.cmnd = khach.cmnd;
+                SuaThongTinKhach.ngayCap = khach.ngayCap;
+                SuaThongTinKhach.noiCap = khach.noiCap;
+                SuaThongTinKhach.HKTT = khach.HKTT;
+                SuaThongTinKhach.gioiTinh = khach.gioiTinh;
+                SuaThongTinKhach.SDT = khach.SDT;
+                SuaThongTinKhach.email = khach.email;
+                SuaThongTinKhach.trangThai = khach.trangThai;
+                await _context.SaveChangesAsync();
+                return 1;
+            }
+            return 0;
+        }
+
+        public async Task<int> SuaThongTinLoaiXeKhachHang(LoaiXe loaiXe)
+        {
+            var SuathongtinloaixeKhach = _context.LoaiXe.Where(c => c.Id == loaiXe.Id).FirstOrDefault();
+            if (SuathongtinloaixeKhach != null)
+            {
+                SuathongtinloaixeKhach.tenloaixe = loaiXe.tenloaixe;
+                await _context.SaveChangesAsync();
+                return 1;
+            }
+            return 0;
+        }
+
+        public async Task<int> SuaThongTinXeKhachHang(Xe xe)
+        {
+            var suathongtinxekhac = _context.Xe.Where(c => c.Id == xe.Id).FirstOrDefault();
+            if (suathongtinxekhac!= null)
+            {
+                suathongtinxekhac.tenxe = xe.tenxe;
+                suathongtinxekhac.bienSo = xe.bienSo;
+                await _context.SaveChangesAsync();
+                return 1;
+            }
+            return 0;
+        }
+
+
+        #endregion
+
+        #region Xóa Thông Tin Khách Hàng
+
+        public KhachHang layidkhachhang(int id)
+        {
+            var khachhang = _context.KhachHang.Where(c => c.Id == id).FirstOrDefault();
+            return khachhang;
+        }
+
+        public async Task<int> XoaThongTinKhachHang(KhachHang khach)
+        {
+            if (khach != null)
+            {
+                _context.KhachHang.Remove(khach);
+                await _context.SaveChangesAsync();
+                return 1;
+            }
+            return 0;
+        }
+
+        public Xe layidXekhachhang(int id)
+        {
+            var xe = _context.Xe.Where(c => c.Id == id).FirstOrDefault();
+            return xe;
+        }
+
+        public async Task<int> XoaThongTinXeKhachHang(Xe xe)
+        {
+            if (xe != null)
+            {
+                 _context.Xe.Remove(xe);
+                await _context.SaveChangesAsync();
+                return 0;
+            }
+            return 1;
+        }
+
+        public LoaiXe layidLoaiXekhachhang(int id)
+        {
+            var loaixe = _context.LoaiXe.Where(c => c.Id == id).FirstOrDefault();
+            return loaixe;
+        }
+
+        public async Task<int> XoaThongTinLoaiXeKhachHang(LoaiXe loaiXe)
+        {
+            if (loaiXe != null)
+            {
+                _context.LoaiXe.Remove(loaiXe);
+                await _context.SaveChangesAsync();
+                return 1;
+            }
+            return 0;
+        }
+
+        #endregion
+
     }
 }

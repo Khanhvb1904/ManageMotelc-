@@ -9,10 +9,36 @@ namespace API_ManageMotel_Fpoly.IServices
 {
     public interface IKhachHangServices
     {
-        public Task<List<FullinfoCustomer>> LayDanhSachKhachHang();
-        public Task<int> ThemThongTinKhachHang(KhachHang khach , Xe xe , LoaiXe loaiXe);
-        public Task<int> SuaThongTinKhachHang(FullinfoCustomer khach);
-        public Task<int> XoaThongTinKhachHang(FullinfoCustomer khach);
-        public FullinfoCustomer laykhachhang(int id);
+        #region Lấy thông Tin Khách Hàng
+        public Task<List<FullinfoCustomer>> LayDanhSachFullKhachHang();
+        public Task<List<KhachHang>> LayDanhSachKhachHang();
+        public Task<List<Xe>> LayDanhSachXeKhachHang();
+        public Task<List<LoaiXe>> LayDanhSachLoaiKhachHang();
+        #endregion
+
+        #region Thêm Thông Tin Khách Hàng 
+        public Task<int> ThemThongTinKhachHang(KhachHang khach);
+        public Task<int> ThemThongTinXeKhachHang(Xe xe);
+        public Task<int> ThemThongTinLoaiXeKhachHang(LoaiXe loaiXe);
+        #endregion
+
+        #region Sửa Thông Tin Khách Hàng
+        public Task<int> SuaThongTinKhachHang(KhachHang khach);
+        public Task<int> SuaThongTinXeKhachHang(Xe xe);
+        public Task<int> SuaThongTinLoaiXeKhachHang(LoaiXe loaiXe);
+        #endregion
+
+        #region Xóa Thông Tin Khách Hàng
+        public Task<int> XoaThongTinKhachHang(KhachHang khach);
+        public KhachHang layidkhachhang(int id);
+
+        public Task<int> XoaThongTinXeKhachHang(Xe xe);
+        public Xe layidXekhachhang(int id);
+
+        public Task<int> XoaThongTinLoaiXeKhachHang(LoaiXe loaiXe);
+        public LoaiXe layidLoaiXekhachhang(int id);
+        #endregion
+
+
     }
 }

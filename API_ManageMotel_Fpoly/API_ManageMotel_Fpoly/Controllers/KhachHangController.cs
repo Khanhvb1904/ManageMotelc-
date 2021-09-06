@@ -172,6 +172,6 @@ namespace API_ManageMotel_Fpoly.Controllers
             return NotFound("Xóa Không Thành Công");
         }
         #endregion
-
+        
     }
 }

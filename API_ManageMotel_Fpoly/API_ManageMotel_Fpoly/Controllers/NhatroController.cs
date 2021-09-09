@@ -18,7 +18,7 @@ namespace API_ManageMotel_Fpoly.Controllers
         {
             _iThongTinNhaTroServices = nhaTroServices;
         }
-
+        #region Lấy Thông Tin Nhà Trọ
         [HttpGet]
         [Route("[controller]/getallinformotel")]
         public async Task<ActionResult<List<NhaTro>>> GetAllinforMotel()
@@ -26,7 +26,9 @@ namespace API_ManageMotel_Fpoly.Controllers
             Console.WriteLine(_iThongTinNhaTroServices.LayDanhSachNhatro());
             return await _iThongTinNhaTroServices.LayDanhSachNhatro();
         }
+        #endregion
 
+        #region Thêm Thông Tin Nhà Trọ
         [HttpPost]
         [Route("[controller]/createinforMotel")]
         public async Task<ActionResult<int>> CreateMotel(NhaTro nhaTro)
@@ -38,14 +40,16 @@ namespace API_ManageMotel_Fpoly.Controllers
             }
             return NotFound("Thêm Dữ Liệu Không Thành Công");
         }
+        #endregion
 
-        [HttpPatch]
+        #region Sửa Thông Tin Nhà Trọ
+        [HttpPut]
         [Route("[controller]/editinforMotel/{id}")]
-        public async Task<ActionResult<int>> EditMotel(NhaTro nhaTro , int id)
+        public async Task<ActionResult<int>> EditMotel(NhaTro nhaTro, int id)
         {
             var temp = _iThongTinNhaTroServices.laynhatro(id);
 
-            if(temp != null)
+            if (temp != null)
             {
                 nhaTro.Id = temp.Id;
                 await _iThongTinNhaTroServices.SuaThongTinnhatro(nhaTro);
@@ -54,7 +58,9 @@ namespace API_ManageMotel_Fpoly.Controllers
 
             return NotFound("Sửa Dữ Liệu Không Thành Công");
         }
+        #endregion
 
+        #region Xóa Thông Tin Nhà Trọ
         [HttpDelete]
         [Route("[controller]/deleteinfoMotel/{id}")]
         public async Task<ActionResult<NhaTro>> DeleteMotel(int id)
@@ -67,7 +73,6 @@ namespace API_ManageMotel_Fpoly.Controllers
             }
             return NotFound("Xóa Không Thành Công");
         }
-
-
+        #endregion
     }
 }

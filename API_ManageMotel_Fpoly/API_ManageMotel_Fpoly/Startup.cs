@@ -55,6 +55,8 @@ namespace API_ManageMotel_Fpoly
             services.AddTransient<ITrangThietBiService, TrangThietBiService>();
             services.AddTransient<IDichVuService, DichVuService>();
             services.AddTransient<IPhongService, PhongService>();
+            services.AddTransient<IKhachHangServices, KhachHangServices>();
+            services.AddTransient<IHopDongServices, HopDongServices>();
             #endregion
 
 

@@ -236,7 +236,7 @@ namespace API_ManageMotel_Fpoly.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("ten")
+                    b.Property<string>("tenloaixe")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -424,7 +424,7 @@ namespace API_ManageMotel_Fpoly.Migrations
                     b.Property<int>("maLoaiXe")
                         .HasColumnType("int");
 
-                    b.Property<string>("ten")
+                    b.Property<string>("tenxe")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

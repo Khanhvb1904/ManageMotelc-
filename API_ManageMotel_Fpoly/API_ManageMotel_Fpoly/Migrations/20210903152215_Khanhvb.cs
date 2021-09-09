@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace API_ManageMotel_Fpoly.Migrations
 {
-    public partial class createdb_v1 : Migration
+    public partial class Khanhvb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -71,14 +71,31 @@ namespace API_ManageMotel_Fpoly.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "LoaiXe",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    tenloaixe = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_LoaiXe", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "NhaTro",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     name = table.Column<string>(nullable: true),
+                    soTang = table.Column<int>(nullable: false),
+                    soPhong = table.Column<int>(nullable: false),
                     diaChi = table.Column<string>(nullable: true),
-                    SDT = table.Column<string>(nullable: true)
+                    ngayChotSo = table.Column<DateTime>(nullable: false),
+                    SDT = table.Column<string>(nullable: true),
+                    moTa = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -170,6 +187,36 @@ namespace API_ManageMotel_Fpoly.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Xe",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    maLoaiXe = table.Column<int>(nullable: false),
+                    maKhachHang = table.Column<int>(nullable: false),
+                    tenxe = table.Column<string>(nullable: true),
+                    bienSo = table.Column<string>(nullable: true),
+                    KhachHangId = table.Column<int>(nullable: true),
+                    LoaiXeId = table.Column<int>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Xe", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Xe_KhachHang_KhachHangId",
+                        column: x => x.KhachHangId,
+                        principalTable: "KhachHang",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Xe_LoaiXe_LoaiXeId",
+                        column: x => x.LoaiXeId,
+                        principalTable: "LoaiXe",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Phong",
                 columns: table => new
                 {
@@ -180,6 +227,9 @@ namespace API_ManageMotel_Fpoly.Migrations
                     soPhong = table.Column<int>(nullable: false),
                     giaPhong = table.Column<decimal>(nullable: false),
                     moTa = table.Column<string>(nullable: true),
+                    sucChua = table.Column<int>(nullable: false),
+                    dienTich = table.Column<decimal>(nullable: false),
+                    ngayPhongSeTrong = table.Column<DateTime>(nullable: false),
                     trangThai = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
@@ -340,6 +390,16 @@ namespace API_ManageMotel_Fpoly.Migrations
                 name: "IX_TrangThietBi_maLoaiThietBi",
                 table: "TrangThietBi",
                 column: "maLoaiThietBi");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Xe_KhachHangId",
+                table: "Xe",
+                column: "KhachHangId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Xe_LoaiXeId",
+                table: "Xe",
+                column: "LoaiXeId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -357,6 +417,9 @@ namespace API_ManageMotel_Fpoly.Migrations
                 name: "TaiKhoan");
 
             migrationBuilder.DropTable(
+                name: "Xe");
+
+            migrationBuilder.DropTable(
                 name: "DichVu");
 
             migrationBuilder.DropTable(
@@ -367,6 +430,9 @@ namespace API_ManageMotel_Fpoly.Migrations
 
             migrationBuilder.DropTable(
                 name: "TrangThietBi");
+
+            migrationBuilder.DropTable(
+                name: "LoaiXe");
 
             migrationBuilder.DropTable(
                 name: "LoaiDichVu");

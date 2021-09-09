@@ -149,7 +149,9 @@ namespace API_ManageMotel_Fpoly.Services
             var themthongtinXekhachhang = new Xe()
             {
                 tenxe = xe.tenxe,
-                bienSo = xe.bienSo
+                bienSo = xe.bienSo,
+                maLoaiXe = xe.maLoaiXe,
+                maKhachHang = xe.maKhachHang
             };
             if (themthongtinXekhachhang != null)
             {

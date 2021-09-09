@@ -50,7 +50,6 @@ namespace API_ManageMotel_Fpoly.EF.ManageMotelDbContext
         public DbSet<Xe> Xe { get; set; }
         public DbSet<LoaiXe> LoaiXe { get; set; }
 
-
         #endregion
     }
 }

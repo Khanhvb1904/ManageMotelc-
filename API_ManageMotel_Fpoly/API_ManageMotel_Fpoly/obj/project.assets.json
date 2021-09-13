@@ -9153,7 +9153,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\plate\\.nuget\\packages\\": {},
+    "C:\\Users\\nduch\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
@@ -9163,7 +9163,7 @@
       "projectUniqueName": "D:\\MotelManagement\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly.csproj",
       "projectName": "API_ManageMotel_Fpoly",
       "projectPath": "D:\\MotelManagement\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly.csproj",
-      "packagesPath": "C:\\Users\\plate\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\nduch\\.nuget\\packages\\",
       "outputPath": "D:\\MotelManagement\\API_ManageMotel_Fpoly\\API_ManageMotel_Fpoly\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
@@ -9171,7 +9171,7 @@
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\plate\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\nduch\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"

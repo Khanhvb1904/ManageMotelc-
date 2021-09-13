@@ -26,7 +26,7 @@ namespace API_ManageMotel_Fpoly
             _IHostingEnviroment = ihostingEnvironment;
         }
 
-        public IConfiguration Configuration { get; }
+        public IConfiguration Configuration { get; set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -45,7 +45,6 @@ namespace API_ManageMotel_Fpoly
             services.AddRazorPages();
             #endregion
 
-
             #region Add Database
             services.AddDbContext<ManageMotelDbContext>(x => x.UseSqlServer(Configuration.GetConnectionString("ManageMotelConnectionString")));
             #endregion
@@ -60,8 +59,6 @@ namespace API_ManageMotel_Fpoly
             services.AddTransient<ITaiKhoanService, TaiKhoanService>();
             #endregion
 
-
-   
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
